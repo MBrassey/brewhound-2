@@ -2,6 +2,7 @@ const { gql } = require("apollo-server-express");
 
 // query users: [User] is just for development purposes, can remove later
 // addUser and login mutations are passed to Auth instead of user so we can get token
+// need to make it so only unique entries can be added
 
 const typeDefs = gql`
   type User {
