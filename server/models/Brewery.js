@@ -4,7 +4,7 @@ const { Schema } = require("mongoose");
 const brewSchema = new Schema({
   // gotten from Yelp GraphQL - > Business
   brewId: {
-    id: ID,
+    type: String,
     required: true,
   },
   name: {

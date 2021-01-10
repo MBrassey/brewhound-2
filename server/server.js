@@ -3,22 +3,21 @@ const path = require("path");
 const db = require("./config/connection");
 
 const { ApolloServer } = require("apollo-server-express");
-// uncomment after created
-// const { typeDefs, resolvers } = require("./schemas");
-// const { authMiddleware } = require("./utils/auth");
+const { typeDefs, resolvers } = require("./schemas");
+const { authMiddleware } = require("./utils/auth");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Apollo init. Uncomment after typeDefs, resolvers, and context are created
-// const server = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   context: authMiddlware,
-// });
+// Apollo init.
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
 
-// integrate apollo with express, uncomment after apollo is setup
-// server.applyMiddlware({ app });
+// integrate apollo with express
+server.applyMiddleware({ app });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
