@@ -18,7 +18,7 @@ const SignUp = () =>{
 				<form>
                     <div className="input-group form-group">
 						<div className="input-group-prepend">
-							<span className="input-group-text"><i class="fas fa-key"></i></span>
+							<span className="input-group-text"><i class="fas fa-envelope-square"></i></span>
 						</div>
 						<input type="email" className="form-control" placeholder="email"/>
 					</div>

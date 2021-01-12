@@ -9,10 +9,9 @@ const Home = () => {
             <div className="col-xl-10">
               <div className="row">
                 <div className="col-xl-5">
-                  <h1>Donec convallis efficitur felis at tempus</h1>
+                  <h1>Welcome To Brew Hound.</h1>
                   <h2>
-                    Integer a justo vehicula, cursus augue sit amet, aliquet
-                    tortor
+                    Sniff out your next brew. Brew Hound, We're mans best friend.
                   </h2>
                   <Link to ="/" className="btn-get-started">Get Started</Link>
                 </div>

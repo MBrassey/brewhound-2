@@ -8,7 +8,7 @@ const Nav = () => {
 
 
     return (
-        <header className="fixed-top" id="header">
+        <header className="fixed-top header" id="header">
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-xl-10 d-flex align-items-center">
