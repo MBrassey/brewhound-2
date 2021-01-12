@@ -1,8 +1,11 @@
-import React from 'react';
+import React  from 'react';
+
+import { Link } from "react-router-dom";
 
 
 
-function Nav() {
+const Nav = () => {
+
 
     return (
         <header className="fixed-top" id="header">
@@ -10,7 +13,7 @@ function Nav() {
           <div className="row justify-content-center">
             <div className="col-xl-10 d-flex align-items-center">
               <h1 className="logo mr-auto">
-                <a href="#">Lorem<span>.</span></a>
+                <a><Link to ="/">Brew Hound</Link><span>.</span></a>
               </h1>
               <nav className="nav-menu d-none d-lg-block">
                 <ul>
@@ -19,7 +22,9 @@ function Nav() {
                   <li><a href="#">amet</a></li>
                 </ul>
               </nav>
-              <a href="#" className="get-started-btn">Get Started</a>
+              <Link className="get-started-btn" to="/login">Login/SignUp</Link>
+              
+
             </div>
           </div>
         </div>
