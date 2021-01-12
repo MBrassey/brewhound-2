@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.21.1",
     "if-env": "^1.0.4",
+    "node-fetch": "^2.6.1",
     "package.json": "^2.0.1"
   },
   "devDependencies": {
