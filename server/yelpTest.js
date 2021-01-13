@@ -1,7 +1,7 @@
 const axios = require("axios");
 const yelpGraph = "https://api.yelp.com/v3/graphql";
-const token =
-  "5TimWiaGJvKNH_-tdRA7t0s9U6HT5jOlLTUVob_E8JxEt6ZOJordjjf1-q8a_yad0PeZ2bORaGPdf9OZFlD_4IbxNzuSeIprzK7v3DwhpQrohanLpg7YhXA4AHD7X3Yx";
+require("dotenv").config();
+const token = process.env.TOKEN;
 
 const term = "brewery";
 const location = "goodyear";
@@ -32,7 +32,6 @@ try {
     }),
   }).then(({ data }) => {
     // graphql packs up as data as does axios so data.data to access search info
-    console.dir(data.data.search.business);
 
     let businesses = data.data.search.business;
 
