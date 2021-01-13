@@ -179,6 +179,28 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+.main{
+  margin-left: 400px;
+  padding: 0px 10px;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   #hero {
@@ -191,6 +213,11 @@ section {
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
   }
 }
 @media (max-height: 500px) {

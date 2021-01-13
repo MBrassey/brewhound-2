@@ -13,7 +13,7 @@ const Home = () => {
                   <h2>
                     Sniff out your next brew. Brew Hound, We're mans best friend.
                   </h2>
-                  <Link to ="/" className="btn-get-started">Get Started</Link>
+                  <Link to ="/search" className="btn-get-started">Get Started</Link>
                 </div>
               </div>
             </div>
