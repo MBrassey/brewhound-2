@@ -1,6 +1,6 @@
 :root {
   --primary-color: #999273;
-  --secondary-color: #FFC30F;
+  --secondary-color: #ffc30f;
   --white: #ffffff;
 }
 
@@ -23,8 +23,6 @@ a:hover {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-
-
 }
 
 h1,
@@ -53,7 +51,7 @@ h6 {
 #header .logo a {
   color: #111;
 }
-#header .logo a span {
+#header .logo span {
   color: var(--secondary-color);
 }
 
@@ -86,7 +84,7 @@ h6 {
 .get-started-btn {
   margin-left: 25px;
   background: var(--secondary-color);
-  color: var(--white);
+  color: var(--white) !important;
   border-radius: 4px;
   padding: 8px 25px;
   white-space: nowrap;
@@ -187,20 +185,10 @@ section {
   height: 100%;
   overflow: auto;
 }
-.main{
+.main {
   margin-left: 400px;
   padding: 0px 10px;
 }
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 768px) {
   #hero {
