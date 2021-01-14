@@ -190,6 +190,22 @@ section {
   padding: 0px 10px;
 }
 
+.text-pri {
+  color: var(--primary-color);
+}
+
+.text-pri :hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.text-sec {
+  color: var(--secondary-color);
+}
+
+.text-sec :hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 @media (max-width: 768px) {
   #hero {
     text-align: center;
