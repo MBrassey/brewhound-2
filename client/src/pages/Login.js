@@ -36,7 +36,7 @@ const LoginForm = () =>{
 			</div>
 			<div className="card-footer">
 				<div className="d-flex justify-content-center links">
-					Don't have an account?<Link to ={"/signup"}>Sign Up</Link>
+					Don't have an account?<Link to ={"/signup"}> Sign Up</Link>
 				</div>
 				<div class className="d-flex justify-content-center">
 				

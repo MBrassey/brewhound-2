@@ -43,7 +43,7 @@ const SignUp = () =>{
 			<div className="card-footer">
 				<div className="d-flex justify-content-center links">
 					Already have an account?
-                    <Link to ={"/login"}>Sign In</Link>
+                    <Link to ={"/login"}> Sign In</Link>
 				</div>
 				<div class className="d-flex justify-content-center">
 				
