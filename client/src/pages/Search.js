@@ -1,22 +1,22 @@
 import React from 'react';
 
 import SearchResults from '../components/SearchResults';
-
+import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 
 const Search= () =>{
     return(
         <>
-        <section id="hero" className="d-flex align-items-center">
-        <div className="sidebar">
-            <br/>
-            <br/>
-            <br/>
+        <section id="hero">
+        <Container>
+        <Form>
+            <Row>
+        <Col></Col>
+          <Col>
             
-        <form>
-          <div className="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-            <div className="input-group">
-              <input type="city" placeholder="City" className="form-control border-0 bg-light rounded rounded-pill"/>
-              <select type="State" className="form-control border-0 bg-light rounded rounded-pill">
+              <Form.Control type="city" placeholder="City" className="form-control border-0 bg-light rounded rounded-pill"/>
+              </Col>
+              <Col>
+              <Form.Control as="select" type="State" className="form-control border-0 bg-light rounded rounded-pill">
                     <option value="" disabled selected>Select a State</option>
                     <option value="Alabama">Alabama</option>
                     <option value="Alaska">Alaska</option>
@@ -69,17 +69,23 @@ const Search= () =>{
                     <option value="West_virginia">West Virginia</option>
                     <option value="Wisconsin">Wisconsin</option>
                     <option value="Wyoming">Wyoming</option>
-              </select>
-              <div className="input-group-append">
-                <button id="button-addon1" type="submit" className="btn btn-link text-primary"><i className="fa fa-search"></i></button>
+              </Form.Control>
+
+             
+          </Col>
+          <Col>
+          <div className="input-group-append">
+                <Button id="button-addon1" type="submit" variant="outline-warning"><i className="fa fa-search"></i></Button>
               </div>
-            </div>
-          </div>
-          </form>
+              </Col>
+          </Row>
+          </Form>
   
 
-        </div>
+          
         <SearchResults></SearchResults>
+
+        </Container>
 
         </section>
 
