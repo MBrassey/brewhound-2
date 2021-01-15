@@ -33,6 +33,9 @@ h5,
 h6 {
   font-family: Raleway, sans-serif;
 }
+h4{
+  color: var(--white);
+}
 
 #header {
   background: var(--white);

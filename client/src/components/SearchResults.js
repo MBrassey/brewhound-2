@@ -1,16 +1,21 @@
 import React  from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const SearchResults = () => {
     return(
-        <div className = "main">
-            <div>
-            <h1>Welcome To Brew Hound.</h1>
-                  <h2>
-                    Sniff out your next brew. Brew Hound, We're mans best friend.
-                  </h2>
-            </div>
+        <Container>
+            <Row className="pt-4">
+                <Col><h4>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4></Col>{' '}{' '}{' '}
+                <Col><h4>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></Col>{' '}{' '}{' '}
+                <Col><h4>Et malesuada fames ac turpis egestas. Eu turpis egestas pretium aenean.</h4></Col>{' '}{' '}{' '}
+            </Row>
+            <Row className="pt-4">
+                <Col><h4>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4></Col>{' '}{' '}{' '}
+                <Col><h4>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></Col>{' '}{' '}{' '}
+                <Col><h4>Et malesuada fames ac turpis egestas. Eu turpis egestas pretium aenean.</h4></Col>{' '}{' '}{' '}
+            </Row>
+        </Container>
 
-        </div>
     );
 
 
