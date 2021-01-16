@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Search from "./pages/Search";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   // declare new apollo client and pulls token from localstorage if available
@@ -35,6 +36,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/search" component={Search} />
+            <Route exact path="/saved" component={Dashboard} />
           </Switch>
         </>
       </Router>

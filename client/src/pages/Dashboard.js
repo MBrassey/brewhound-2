@@ -1,7 +1,14 @@
 import React  from 'react';
+import {
+  Jumbotron,
+  CardColumns,
+  Card,
+  Button,
+} from "react-bootstrap";
+import Auth from "../utils/auth";
 import { GET_USER } from "../utils/queries";
 import { Container, Row, Col } from 'react-bootstrap';
-import { removeBrewId } from "../utils/localStorage";
+import { removeBreweryId } from "../utils/localStorage";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { REMOVE_BREWERY } from "../utils/mutations";
 
