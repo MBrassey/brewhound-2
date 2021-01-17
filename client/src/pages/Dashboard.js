@@ -1,10 +1,10 @@
-import { CardColumns, Card, Button } from "react-bootstrap";
-import { useQuery, useMutation } from "@apollo/react-hooks";
-import { removeBreweryId } from "../utils/localStorage";
-import { REMOVE_BREWERY } from "../utils/mutations";
+// import { CardColumns, Card, Button } from "react-bootstrap";
+import { useQuery } from "@apollo/react-hooks";
+// import { removeBreweryId } from "../utils/localStorage";
+// import { REMOVE_BREWERY } from "../utils/mutations";
 import { GET_USER } from "../utils/queries";
 import FadeIn from "react-fade-in";
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 import React from "react";
 
 const Dashboard = () => {
@@ -12,28 +12,28 @@ const Dashboard = () => {
   const userData = data?.me || {};
   console.log("test:" + userData.username);
 
-  const [removeBrew, { error }] = useMutation(REMOVE_BREWERY);
-  const handleDeleteBrew = async (brewId) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
+  // const [removeBrew, { error }] = useMutation(REMOVE_BREWERY);
+  // const handleDeleteBrew = async (brewId) => {
+  //   const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    if (!token) {
-      return false;
-    }
+  //   if (!token) {
+  //     return false;
+  //   }
 
-    try {
-      await removeBrew({
-        variables: { brewId },
-      });
+  //   try {
+  //     await removeBrew({
+  //       variables: { brewId },
+  //     });
 
-      if (error) {
-        throw new Error("Something went wrong!");
-      }
+  //     if (error) {
+  //       throw new Error("Something went wrong!");
+  //     }
 
-      removeBreweryId(brewId);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //     removeBreweryId(brewId);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   if (loading) {
     return <h2>LOADING...</h2>;

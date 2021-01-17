@@ -27,7 +27,6 @@ export const YELP_SEARCH = gql`
         id
         name
         url
-        phone
         location {
           address1
           city

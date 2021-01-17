@@ -1,7 +1,7 @@
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import SearchResults from "../components/SearchResults";
 import React, { useState } from "react";
-import { Auth } from "../utils/auth";
+// import { Auth } from "../utils/auth";
 import { useQuery } from "@apollo/react-hooks";
 import { YELP_SEARCH } from "../utils/queries";
 
@@ -13,15 +13,39 @@ const Search = () => {
     city: "",
     state: "",
   });
+  // GQL fetch for yelp data
+  const { loading, data } = useQuery(YELP_SEARCH, {
+    variables: { location: searchInput.city + " " + searchInput.state },
+  });
 
   // need to add logic to save brewery
 
   // need to add logic to save to local storage
 
   const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
     try {
-      const { loading, data } = useQuery(YELP_SEARCH, {
-        variables: { location: searchInput.city + " " + searchInput.state },
+      const breweries = await data.search.business;
+
+      const brewData = breweries.map((brewery) => ({
+        brewId: brewery.id,
+        name: brewery.name,
+        location:
+          brewery.location.address +
+          " " +
+          brewery.location.city +
+          " " +
+          brewery.location.state,
+        rating: brewery.rating,
+        link: brewery.url,
+        photo: brewery.photos[0],
+      }));
+
+      setSearchedBreweries(brewData);
+      setSearchInput({
+        city: "",
+        state: "",
       });
     } catch (err) {
       console.log(err);
