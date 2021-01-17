@@ -16,7 +16,7 @@ const { authMiddleware } = require("../utils/auth");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config({ path: __dirname + "/../.env" });
 token = process.env.TOKEN;
 
 app.use(express.urlencoded({ extended: true }));
