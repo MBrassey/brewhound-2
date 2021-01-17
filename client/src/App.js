@@ -39,6 +39,7 @@ function App() {
             <Route exact path="/search" component={Search} />
             <Route exact path="/saved" component={Dashboard} />
             <Route exact path="/about" component={AboutUs} />
+            <Route render={() => <h1 className="notFound">Wrong page!</h1>} />
           </Switch>
         </>
       </Router>
