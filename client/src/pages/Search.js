@@ -1,5 +1,12 @@
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import SearchResults from "../components/SearchResults";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Card,
+  CardColumns,
+} from "react-bootstrap";
 import React, { useState } from "react";
 // import { Auth } from "../utils/auth";
 import { useQuery } from "@apollo/react-hooks";
@@ -14,7 +21,7 @@ const Search = () => {
     state: "",
   });
   // GQL fetch for yelp data
-  const { loading, data } = useQuery(YELP_SEARCH, {
+  const { data } = useQuery(YELP_SEARCH, {
     variables: { location: searchInput.city + " " + searchInput.state },
   });
 
@@ -28,11 +35,12 @@ const Search = () => {
     try {
       const breweries = await data.search.business;
 
+      console.log(breweries);
       const brewData = breweries.map((brewery) => ({
         brewId: brewery.id,
         name: brewery.name,
         location:
-          brewery.location.address +
+          brewery.location.address1 +
           " " +
           brewery.location.city +
           " " +
@@ -158,7 +166,31 @@ const Search = () => {
             </Row>
           </Form>
 
-          <SearchResults></SearchResults>
+          <CardColumns className="mt-4">
+            {searchedBreweries.map((brews) => {
+              return (
+                <Card key={brews.brewId}>
+                  {brews.photo ? (
+                    <Card.Img
+                      src={brews.photo}
+                      alt={`${brews.name} Yelp cover`}
+                      variant="top"
+                    />
+                  ) : null}
+
+                  <Card.Body>
+                    <Card.Title className="BrewFont">{brews.name}</Card.Title>
+                    <Card.Text>Rating: {brews.rating}</Card.Text>
+                    <Card.Link href={brews.link} target="_blank">
+                      {brews.name}'s Website
+                    </Card.Link>
+                    <Card.Text>Location: {brews.location}</Card.Text>
+                    <Button variant="warning">Save</Button>
+                  </Card.Body>
+                </Card>
+              );
+            })}
+          </CardColumns>
         </Container>
       </section>
     </>
