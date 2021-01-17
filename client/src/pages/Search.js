@@ -2,8 +2,10 @@ import React, { useState } from "react";
 // import { useMutation } from "@apollo/react-hooks";
 import SearchResults from "../components/SearchResults";
 // import { SAVE_BREWERY } from "../utils/mutations";
-import { yelpSearch } from "../utils/API";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+const axios = require("axios");
+const yelpGraph =
+  "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/graphql";
 
 const Search = () => {
   // hold state for yelp query
@@ -19,23 +21,45 @@ const Search = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    const token = process.env.REACT_APP_TOKEN;
 
     // makes sure forms are not empty
     if (!searchInput) {
       return false;
     }
 
-    try {
-      // call to yelpGQL
-      const response = await yelpSearch(searchInput.city, searchInput.state);
-      console.log("Response: " + response);
+    const yelpSearch = (city, state, token) => {
+      return axios({
+        method: "post",
+        url: yelpGraph,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-type": "application/graphql",
+          "x-requested-with": "xmlhttprequest",
+          "Access-Control-Allow-Origin": "*",
+          "Accept-Language": "en_US",
+        },
+        data: JSON.stringify({
+          query: `{
+            search(term: "brewery",
+            location: "${city} ${state}",
+            limit: 1){
+              business{
+                name
+              }
+            }
+          }`,
+        }),
+      });
+    };
 
-      //   const { brewData } = await response.json();
+    const response = await yelpSearch(
+      searchInput.city,
+      searchInput.state,
+      token
+    );
 
-      // do something with datas
-    } catch (err) {
-      console.log(err);
-    }
+    console.log(response);
   };
 
   function handleChange(event) {

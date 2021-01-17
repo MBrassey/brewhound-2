@@ -2,6 +2,7 @@
   "name": "brewhound-2",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.yelp.com/v3/graphql",
   "dependencies": {
     "axios": "^0.21.1",
     "if-env": "^1.0.4",
