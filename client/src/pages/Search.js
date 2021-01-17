@@ -3,6 +3,7 @@ import SearchResults from "../components/SearchResults";
 import React, { useState } from "react";
 import { Auth } from "../utils/auth";
 import { useQuery } from "@apollo/react-hooks";
+import { YELP_SEARCH } from "../utils/queries";
 
 const Search = () => {
   // holds yelp GQL data
@@ -19,7 +20,9 @@ const Search = () => {
 
   const handleFormSubmit = async (event) => {
     try {
-      //code
+      const { loading, data } = useQuery(YELP_SEARCH, {
+        variables: { location: searchInput.city + " " + searchInput.state },
+      });
     } catch (err) {
       console.log(err);
     }
