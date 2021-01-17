@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
-import image from "../img/pexels-pixabay-159291.jpg"
+
 
 const AboutUs = () => {
     return (
