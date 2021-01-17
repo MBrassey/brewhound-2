@@ -148,6 +148,17 @@ h4{
   background: 0 0;
   border-color: #fff;
 }
+#hero span {
+  color: var(--secondary-color);
+}
+
+.notFound {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+  margin: 10px 0 0 10px;
+  color: var(--secondary-color);
+}
 
 section {
   padding: 60px 0;
