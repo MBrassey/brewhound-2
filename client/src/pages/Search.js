@@ -18,6 +18,17 @@ const Search = () => {
     // code here
   };
 
+  function handleChange(event) {
+    // form onChange handler since there are two form fields
+    // assigns value to form field value
+    // updates state with event.target.name (city or state) and maps to value
+    const value = event.target.value;
+    setSearchInput({
+      ...searchInput,
+      [event.target.name]: value,
+    });
+  }
+
   return (
     <>
       <section className="fixed-bg">
