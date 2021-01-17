@@ -8,17 +8,22 @@ const Search = () => {
   // holds yelp GQL data
   const [searchedBreweries, setSearchedBreweries] = useState([]);
   // state for holding search input
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState({
+    city: "",
+    state: "",
+  });
 
   // need to add logic to save brewery
 
   // need to add logic to save to local storage
 
   const handleFormSubmit = async (event) => {
-    // code here
+    try {
+      //code
+    } catch (err) {
+      console.log(err);
+    }
   };
-
-  console.log(searchInput);
 
   function handleChange(event) {
     // form onChange handler since there are two form fields
