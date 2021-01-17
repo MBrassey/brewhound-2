@@ -1,11 +1,10 @@
-import React from "react";
 import { Jumbotron, CardColumns, Card, Button } from "react-bootstrap";
-import Auth from "../utils/auth";
-import { GET_USER } from "../utils/queries";
-import { Container, Row, Col } from "react-bootstrap";
-import { removeBreweryId } from "../utils/localStorage";
 import { useQuery, useMutation } from "@apollo/react-hooks";
+import { removeBreweryId } from "../utils/localStorage";
 import { REMOVE_BREWERY } from "../utils/mutations";
+import { GET_USER } from "../utils/queries";
+import Auth from "../utils/auth";
+import React from "react";
 
 const Dashboard = () => {
   const { loading, data } = useQuery(GET_USER);
@@ -23,8 +22,14 @@ const Dashboard = () => {
             <div className="col-xl-10">
               <div className="row">
                 <div className="col-xl-20">
-                  <h1>{userData.username}'s Saved Breweries:</h1>
-                  <h2>Total Saved: {userData.savedBreweries}</h2>
+                  <h1><span>{userData.username}'s</span> Saved Breweries:</h1>
+                  <h2>
+                    {userData.savedBreweries.length
+                      ? `Viewing ${userData.savedBreweries.length} saved ${
+                          userData.savedBreweries.length === 1 ? "brewery" : "breweries"
+                        }:`
+                      : "You have no saved breweries!"}
+                  </h2>
                 </div>
               </div>
             </div>

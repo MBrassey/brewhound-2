@@ -148,6 +148,9 @@ h4{
   background: 0 0;
   border-color: #fff;
 }
+#hero span {
+  color: var(--secondary-color);
+}
 
 section {
   padding: 60px 0;
