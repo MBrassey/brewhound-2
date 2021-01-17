@@ -52,7 +52,7 @@ const Dashboard = () => {
               <div className="col-xl-10">
                 <div className="row">
                   <div className="col-xl-20">
-                    <h1>
+                    <h1 className="BrewFont">
                       <span>{userData.username}'s</span> Saved Breweries:
                     </h1>
                     <h2>

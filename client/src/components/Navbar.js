@@ -17,7 +17,7 @@ const AppNavbar = () => {
           <Container fluid>
             <Navbar.Brand as={Link} to="/" className="logo">
             <img className="brewLogo" src={brewLogo} ></img>
-              <span> B</span>rew<span>H</span>ound
+              <span>B</span>rew<span>H</span>ound
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar" />
             <Navbar.Collapse id="navbar">
@@ -34,7 +34,7 @@ const AppNavbar = () => {
                   </>
                 ) : (
                   <Nav.Link
-                    className="get-started-btn text-center "
+                    className="get-started-btn text-center"
                     onClick={() => setShowModal(true)}
                   >
                     Login/Sign Up
@@ -56,12 +56,12 @@ const AppNavbar = () => {
               <Modal.Title id="signup-modal">
                 <Nav variant="tabs">
                   <Nav.Item>
-                    <Nav.Link eventKey="login" className="text-sec">
+                    <Nav.Link eventKey="login" className="BrewFont text-sec">
                       Login
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="signup" className="text-sec">
+                    <Nav.Link eventKey="signup" className="BrewFont text-sec">
                       Sign Up
                     </Nav.Link>
                   </Nav.Item>

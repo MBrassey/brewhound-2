@@ -15,7 +15,7 @@ const Home = () => {
             <div className="col-xl-10">
               <div className="row">
                 <div className="col-xl-5">
-                  <h1>Welcome To Brew Hound.</h1>
+                  <h1 className="BrewFont">Welcome To Brew Hound.</h1>
                   <h2>
                     Sniff out your next brew. Brew Hound, We're mans best
                     friend.
