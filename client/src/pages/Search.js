@@ -18,6 +18,8 @@ const Search = () => {
     // code here
   };
 
+  console.log(searchInput);
+
   function handleChange(event) {
     // form onChange handler since there are two form fields
     // assigns value to form field value
@@ -33,25 +35,28 @@ const Search = () => {
     <>
       <section className="fixed-bg">
         <Container>
-          <Form>
+          <Form onSubmit={handleFormSubmit}>
             <Row>
               <Col></Col>
               <Col>
                 <Form.Control
-                  type="city"
+                  name="city"
+                  type="text"
                   placeholder="City"
-                  className="form-control border-0 bg-light rounded rounded-pill"
+                  className="border-0 bg-light rounded rounded-pill"
+                  value={searchInput.city}
+                  onChange={handleChange}
                 />
               </Col>
               <Col>
                 <Form.Control
+                  name="state"
                   as="select"
-                  type="State"
-                  className="form-control border-0 bg-light rounded rounded-pill"
+                  type="text"
+                  className="border-0 bg-light rounded rounded-pill"
+                  value={searchInput.state}
+                  onChange={handleChange}
                 >
-                  <option value="" disabled selected>
-                    Select a State
-                  </option>
                   <option value="Alabama">Alabama</option>
                   <option value="Alaska">Alaska</option>
                   <option value="Arizona">Arizona</option>
