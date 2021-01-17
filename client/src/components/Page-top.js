@@ -18,7 +18,7 @@ const TopArrow = () =>{
     window.addEventListener('scroll', checkScrollTop)
     
     return(
-        <i  className="scrollTop fa fa-arrow-circle-o-up " onClick={scrollTop} style={{height: 40, display: showScroll ? 'flex' : 'none'}}></i>
+        <i  className="scrollTop fa fa-arrow-circle-o-up " onClick={scrollTop} style={{height: 40, display: showScroll ? 'flex' : 'none'}}>Back to the Top</i>
     );
 }
 
