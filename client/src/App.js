@@ -11,6 +11,8 @@ import Search from "./pages/Search";
 import Dashboard from "./pages/Dashboard";
 import NoBeer from "./pages/NoBeer";
 import AboutUs from "./pages/About-us";
+import Footer from "./components/Footer";
+import TopArrow from './components/Page-top';
 
 function App() {
   // declare new apollo client and pulls token from localstorage if available
@@ -42,6 +44,8 @@ function App() {
             <Route exact path="/about" component={AboutUs} />
             <Route component={NoBeer} />
           </Switch>
+          <TopArrow></TopArrow>
+          <Footer></Footer>
         </>
       </Router>
     </ApolloProvider>
