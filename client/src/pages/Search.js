@@ -1,8 +1,23 @@
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import SearchResults from "../components/SearchResults";
-import React from "react";
+import React, { useState } from "react";
+import { Auth } from "../utils/auth";
+import { useQuery } from "@apollo/react-hooks";
 
 const Search = () => {
+  // holds yelp GQL data
+  const [searchedBreweries, setSearchedBreweries] = useState([]);
+  // state for holding search input
+  const [searchInput, setSearchInput] = useState("");
+
+  // need to add logic to save brewery
+
+  // need to add logic to save to local storage
+
+  const handleFormSubmit = async (event) => {
+    // code here
+  };
+
   return (
     <>
       <section className="fixed-bg">

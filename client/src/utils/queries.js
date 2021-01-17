@@ -18,3 +18,24 @@ export const GET_USER = gql`
     }
   }
 `;
+
+export const YELP_SEARCH = gql`
+  query SearchForBreweries($location: String) {
+    search(term: "brewery", location: $location, limit: 2) {
+      total
+      business {
+        id
+        name
+        url
+        phone
+        location {
+          address1
+          city
+          state
+        }
+        rating
+        photos
+      }
+    }
+  }
+`;
