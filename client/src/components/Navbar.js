@@ -31,7 +31,7 @@ const AppNavbar = () => {
                 </>
               ) : (
                 <Nav.Link
-                  className="get-started-btn"
+                  className="get-started-btn text-center "
                   onClick={() => setShowModal(true)}
                 >
                   Login/Sign Up
