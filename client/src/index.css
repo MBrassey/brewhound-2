@@ -41,6 +41,7 @@ h4 {
   background: var(--white);
   transition: all 0.5s;
   padding: 20px 0;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 #header .logo {
@@ -158,6 +159,13 @@ h4 {
   font-weight: 700;
   margin: 10px 0 0 10px;
   color: var(--secondary-color);
+}
+.brewLogo {
+  width: 38px;
+  padding-bottom: 3px;
+  padding-right: 0px;
+  -webkit-filter: drop-shadow( 5px 5px 10px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow( 5px 5px 10px rgba(0, 0, 0, .3));
 }
 
 section {
