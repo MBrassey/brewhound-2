@@ -1,6 +1,7 @@
 :root {
   --primary-color: #999273;
   --secondary-color: #ffc30f;
+  --tertiary-color: #E0A800;
   --white: #ffffff;
 }
 
@@ -56,7 +57,7 @@ h4 {
   color: #111;
 }
 #header .logo span {
-  color: var(--secondary-color);
+  color: var(--tertiary-color);
 }
 
 .nav-menu ul {
