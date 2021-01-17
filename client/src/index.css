@@ -208,6 +208,29 @@ section {
 .text-sec :hover {
   color: rgba(0, 0, 0, 0.6);
 }
+.scrollTop {
+  position: fixed; 
+  width: 100%;
+  bottom: 20px;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+.scrollTop:hover{
+  opacity: 1;
+}
+.fixed-bg {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: url(./img/pexels-pixabay-159291.jpg);
+}
 
 @media (max-width: 768px) {
   #hero {

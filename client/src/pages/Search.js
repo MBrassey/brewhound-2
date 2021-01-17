@@ -1,12 +1,13 @@
 import React from 'react';
 
 import SearchResults from '../components/SearchResults';
+import TopArrow from '../components/Page-top';
 import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 
 const Search= () =>{
     return(
         <>
-        <section id="hero">
+        <section className="fixed-bg">
         <Container>
         <Form>
             <Row>
@@ -86,8 +87,11 @@ const Search= () =>{
         <SearchResults></SearchResults>
 
         </Container>
-
         </section>
+    
+
+        
+        <TopArrow></TopArrow>
 
 
 
