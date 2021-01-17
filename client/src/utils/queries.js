@@ -9,6 +9,11 @@ export const GET_USER = gql`
       brewCount
       savedBreweries {
         brewId
+        name
+        location
+        rating
+        link
+        photo
       }
     }
   }
