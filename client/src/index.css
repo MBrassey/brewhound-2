@@ -112,7 +112,7 @@ h4{
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  /*background: rgba(0, 0, 0, 0.6);*/
   position: absolute;
   bottom: 0;
   top: 0;

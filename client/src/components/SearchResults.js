@@ -1,18 +1,91 @@
 import React  from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import image from "../img/pexels-pixabay-159291.jpg"
 
 const SearchResults = () => {
     return(
         <Container>
             <Row className="pt-4">
-                <Col><h4>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4></Col>{' '}{' '}{' '}
-                <Col><h4>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></Col>{' '}{' '}{' '}
-                <Col><h4>Et malesuada fames ac turpis egestas. Eu turpis egestas pretium aenean.</h4></Col>{' '}{' '}{' '}
-            </Row>
+                <Col>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src= {image} />
+                <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                Whatever we want to add to this.
+
+                </Card.Text>
+                <Button variant="warning">Save</Button>
+                </Card.Body>
+                </Card>
+                </Col>{' '}{' '}{' '}
+                <Col>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src= {image} />
+                <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                Whatever we want to add to this.
+
+                </Card.Text>
+                <Button variant="warning">Save</Button>
+                </Card.Body>
+                </Card>
+                </Col>{' '}{' '}{' '}
+                <Col>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src= {image} />
+                <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                Whatever we want to add to this.
+
+                </Card.Text>
+                <Button variant="warning">Save</Button>
+                </Card.Body>
+                </Card>
+                </Col>{' '}{' '}{' '}            </Row>
             <Row className="pt-4">
-                <Col><h4>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4></Col>{' '}{' '}{' '}
-                <Col><h4>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></Col>{' '}{' '}{' '}
-                <Col><h4>Et malesuada fames ac turpis egestas. Eu turpis egestas pretium aenean.</h4></Col>{' '}{' '}{' '}
+            <Col>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src= {image} />
+                <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                Whatever we want to add to this.
+
+                </Card.Text>
+                <Button variant="warning">Save</Button>
+                </Card.Body>
+                </Card>
+                </Col>{' '}{' '}{' '}
+                <Col>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src= {image} />
+                <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                Whatever we want to add to this.
+
+                </Card.Text>
+                <Button variant="warning">Save</Button>
+                </Card.Body>
+                </Card>
+                </Col>{' '}{' '}{' '}
+                <Col>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src= {image} />
+                <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                Whatever we want to add to this.
+
+                </Card.Text>
+                <Button variant="warning">Save</Button>
+                </Card.Body>
+                </Card>
+                </Col>{' '}{' '}{' '}
+
             </Row>
         </Container>
 
