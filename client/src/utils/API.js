@@ -1,7 +1,7 @@
-const axios = require("axios");
 const yelpGraph = "https://api.yelp.com/v3/graphql";
 require("dotenv").config({ path: "../../.env" });
 const token = process.env.TOKEN;
+const axios = require("axios");
 
 let yelpGQL = axios.create({
   baseURL: yelpGraph,

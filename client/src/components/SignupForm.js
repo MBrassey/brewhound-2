@@ -2,6 +2,7 @@ import { Form, Button, Alert } from "react-bootstrap";
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
 import React, { useState } from "react";
+import FadeIn from "react-fade-in";
 import Auth from "../utils/auth";
 
 const SignupForm = () => {
@@ -45,6 +46,7 @@ const SignupForm = () => {
 
   return (
     <>
+    <FadeIn>
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
@@ -116,6 +118,7 @@ const SignupForm = () => {
         </Button>
         {error && <div>Sign up failed</div>}
       </Form>
+      </FadeIn>
     </>
   );
 };

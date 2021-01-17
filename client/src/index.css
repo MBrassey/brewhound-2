@@ -33,7 +33,7 @@ h5,
 h6 {
   font-family: Raleway, sans-serif;
 }
-h4{
+h4 {
   color: var(--white);
 }
 
@@ -220,7 +220,7 @@ section {
   color: rgba(0, 0, 0, 0.6);
 }
 .scrollTop {
-  position: fixed; 
+  position: fixed;
   width: 100%;
   bottom: 20px;
   align-items: center;
@@ -232,7 +232,7 @@ section {
   transition: opacity 0.4s;
   opacity: 0.5;
 }
-.scrollTop:hover{
+.scrollTop:hover {
   opacity: 1;
 }
 .fixed-bg {

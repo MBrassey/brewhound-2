@@ -1,9 +1,9 @@
+import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
-import SignUp from "./SignupForm";
 import LoginForm from "./LoginForm";
-
+import FadeIn from "react-fade-in";
+import SignUp from "./SignupForm";
 import Auth from "../utils/auth";
 
 const AppNavbar = () => {
@@ -11,72 +11,74 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg="light" variant="light" expand="lg" id="header">
-        <Container fluid>
-          <Navbar.Brand as={Link} to="/" className="logo">
-            <span>b</span>rew<span>h</span>ound
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar" />
-          <Navbar.Collapse id="navbar">
-            <Nav className="ml-auto">
-              <Nav.Link as={Link} to="/search">
-                Search For Breweries
-              </Nav.Link>
-              {Auth.loggedIn() ? (
-                <>
-                  <Nav.Link as={Link} to="/saved">
-                    Checkout Your Breweries
-                  </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                </>
-              ) : (
-                <Nav.Link
-                  className="get-started-btn text-center "
-                  onClick={() => setShowModal(true)}
-                >
-                  Login/Sign Up
+      <FadeIn>
+        <Navbar bg="light" variant="light" expand="lg" id="header">
+          <Container fluid>
+            <Navbar.Brand as={Link} to="/" className="logo">
+              <span>b</span>rew<span>h</span>ound
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbar" />
+            <Navbar.Collapse id="navbar">
+              <Nav className="ml-auto">
+                <Nav.Link as={Link} to="/search">
+                  Search For Breweries
                 </Nav.Link>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      {/* Modal  */}
-      <Modal
-        size="sm"
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby="login-signup-modal"
-      >
-        <Tab.Container defaultActiveKey="login">
-          <Modal.Header closeButton>
-            <Modal.Title id="signup-modal">
-              <Nav variant="tabs">
-                <Nav.Item>
-                  <Nav.Link eventKey="login" className="text-sec">
-                    Login
+                {Auth.loggedIn() ? (
+                  <>
+                    <Nav.Link as={Link} to="/saved">
+                      Checkout Your Breweries
+                    </Nav.Link>
+                    <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  </>
+                ) : (
+                  <Nav.Link
+                    className="get-started-btn text-center "
+                    onClick={() => setShowModal(true)}
+                  >
+                    Login/Sign Up
                   </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="signup" className="text-sec">
-                    Sign Up
-                  </Nav.Link>
-                </Nav.Item>
+                )}
               </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey="login">
-                <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey="signup">
-                <SignUp handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        {/* Modal  */}
+        <Modal
+          size="sm"
+          show={showModal}
+          onHide={() => setShowModal(false)}
+          aria-labelledby="login-signup-modal"
+        >
+          <Tab.Container defaultActiveKey="login">
+            <Modal.Header closeButton>
+              <Modal.Title id="signup-modal">
+                <Nav variant="tabs">
+                  <Nav.Item>
+                    <Nav.Link eventKey="login" className="text-sec">
+                      Login
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="signup" className="text-sec">
+                      Sign Up
+                    </Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Tab.Content>
+                <Tab.Pane eventKey="login">
+                  <LoginForm handleModalClose={() => setShowModal(false)} />
+                </Tab.Pane>
+                <Tab.Pane eventKey="signup">
+                  <SignUp handleModalClose={() => setShowModal(false)} />
+                </Tab.Pane>
+              </Tab.Content>
+            </Modal.Body>
+          </Tab.Container>
+        </Modal>
+      </FadeIn>
     </>
   );
 };

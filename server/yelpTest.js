@@ -1,10 +1,9 @@
-const axios = require("axios");
 const yelpGraph = "https://api.yelp.com/v3/graphql";
-require("dotenv").config();
 const token = process.env.TOKEN;
-
-const term = "brewery";
+const axios = require("axios");
 const location = "goodyear";
+require("dotenv").config();
+const term = "brewery";
 
 let yelpGQL = axios.create({
   baseURL: yelpGraph,

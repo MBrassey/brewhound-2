@@ -1,8 +1,8 @@
-import React from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom";
-import "./index.css";
+import React from "react";
 import App from "./App";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>

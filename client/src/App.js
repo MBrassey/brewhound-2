@@ -1,18 +1,17 @@
-import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
-import ApolloClient from "apollo-boost";
-
+import TopArrow from "./components/Page-top";
+import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Footer from "./components/Footer";
+import ApolloClient from "apollo-boost";
+import AboutUs from "./pages/About-us";
 import SignUp from "./pages/Signup";
 import Search from "./pages/Search";
-import Dashboard from "./pages/Dashboard";
 import NoBeer from "./pages/NoBeer";
-import AboutUs from "./pages/About-us";
-import Footer from "./components/Footer";
-import TopArrow from './components/Page-top';
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import React from "react";
 
 function App() {
   // declare new apollo client and pulls token from localstorage if available
