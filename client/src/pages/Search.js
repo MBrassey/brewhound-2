@@ -6,13 +6,16 @@ import {
   Button,
   Card,
   CardColumns,
+  Modal
 } from "react-bootstrap";
 import React, { useState } from "react";
 // import { Auth } from "../utils/auth";
 import { useQuery } from "@apollo/react-hooks";
 import { YELP_SEARCH } from "../utils/queries";
+import Map from '../components/Map';
 
 const Search = () => {
+  const [showModal, setShowModal] = useState(false);
   // holds yelp GQL data
   const [searchedBreweries, setSearchedBreweries] = useState([]);
   // state for holding search input
@@ -186,6 +189,7 @@ const Search = () => {
                     </Card.Link>
                     <Card.Text>Location: {brews.location}</Card.Text>
                     <Button variant="warning">Save</Button>
+                    <Button variant="warning" onClick={() => setShowModal(true)}>Map</Button>
                   </Card.Body>
                 </Card>
               );
@@ -193,6 +197,27 @@ const Search = () => {
           </CardColumns>
         </Container>
       </section>
+      <Modal
+          size="sm"
+          show={showModal}
+          onHide={() => setShowModal(false)}
+          aria-labelledby="login-signup-modal"
+        >
+        <Map
+        id="myMap"
+        options={{
+          center: { lat: 41.0082, lng: 28.9784 },
+          zoom: 20
+        }}
+        onMapLoad={map => {
+          var marker = new window.google.maps.Marker({
+            position: { lat: 41.0082, lng: 28.9784 },
+            map: map,
+          });
+        }}
+      />
+          
+        </Modal>
     </>
   );
 };
