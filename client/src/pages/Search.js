@@ -12,32 +12,9 @@ import React, { useState } from "react";
 // import { Auth } from "../utils/auth";
 import { useQuery } from "@apollo/react-hooks";
 import { YELP_SEARCH } from "../utils/queries";
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
-const containerStyle = {
-  width: '400px',
-  height: '400px'
-};
+
+
 const Search = () => {
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyDau5v5tTs6axw_ZN0OZZzyntxGELn3kHY"
-  })
-  const [map, setMap] = React.useState(null)
-
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
-  
   const [showModal, setShowModal] = useState(false);
   // holds yelp GQL data
   const [searchedBreweries, setSearchedBreweries] = useState([]);
@@ -226,14 +203,7 @@ const Search = () => {
           onHide={() => setShowModal(false)}
           aria-labelledby="login-signup-modal"
         >
-        <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      ></GoogleMap>
-
+          
         </Modal>
     </>
   );
