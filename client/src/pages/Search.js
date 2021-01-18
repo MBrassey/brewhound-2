@@ -6,13 +6,21 @@ import {
   Button,
   Card,
   CardColumns,
+  Modal
 } from "react-bootstrap";
 import React, { useState } from "react";
 // import { Auth } from "../utils/auth";
 import { useQuery } from "@apollo/react-hooks";
 import { YELP_SEARCH } from "../utils/queries";
+import ReactDOM from "react-dom";
+import Map from "../components/Map";
+import GoogleMapReact from "google-map-react";
+const googleMapsApiKey = "AIzaSyDau5v5tTs6axw_ZN0OZZzyntxGELn3kHY";
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const Search = () => {
+  const [showModal, setShowModal] = useState(false);
   // holds yelp GQL data
   const [searchedBreweries, setSearchedBreweries] = useState([]);
   // state for holding search input
@@ -70,6 +78,7 @@ const Search = () => {
       [event.target.name]: value,
     });
   }
+
 
   return (
     <>
@@ -186,6 +195,7 @@ const Search = () => {
                     </Card.Link>
                     <Card.Text>Location: {brews.location}</Card.Text>
                     <Button variant="warning">Save</Button>
+                    <Button variant="warning" onClick={() => setShowModal(true)}>Map</Button>
                   </Card.Body>
                 </Card>
               );
@@ -193,6 +203,30 @@ const Search = () => {
           </CardColumns>
         </Container>
       </section>
+      <Modal
+          style={{ height: '100vh', width: '100%' }}
+          show={showModal}
+          onHide={() => setShowModal(false)}
+          aria-labelledby="login-signup-modal"
+        >
+         
+         <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: "AIzaSyDau5v5tTs6axw_ZN0OZZzyntxGELn3kHY" }}
+          defaultCenter={59.95,30.33}
+          defaultZoom={11}
+        >
+          <AnyReactComponent
+            lat={59.955413}
+            lng={30.337844}
+            text="My Marker"
+          />
+        </GoogleMapReact>
+      </div>
+
+          
+        </Modal>
+        
     </>
   );
 };
