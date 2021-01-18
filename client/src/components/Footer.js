@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <FadeIn>
       <div className="d-flex flex-column">
-        <footer className="bg-dark text-white-50 text-center">
+        <footer className="bg-dark text-white-50 text-center footer">
           <Link to={"/about"} className="text-warning">
             About Us
           </Link>
