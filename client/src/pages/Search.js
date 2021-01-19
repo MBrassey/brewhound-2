@@ -268,12 +268,8 @@ const Search = () => {
             center: { lat: 41.0082, lng: 28.9784 },
             zoom: 20,
           }}
-          onMapLoad={(map) => {
-            var marker = new window.google.maps.Marker({
-              position: { lat: 41.0082, lng: 28.9784 },
-              map: map,
-            });
-          }}
+
+
         />
       </Modal>
     </>
