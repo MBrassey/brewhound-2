@@ -28,7 +28,7 @@ const Search = () => {
     state: "",
   });
   // GQL fetch for yelp data
-  const { data } = useQuery(YELP_SEARCH, {
+  const { loading, data } = useQuery(YELP_SEARCH, {
     variables: { location: searchInput.city + " " + searchInput.state },
   });
 
@@ -41,30 +41,33 @@ const Search = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const breweries = await data.search.business;
+      if (data) {
+        const breweries = await data.search.business;
 
-      console.log(breweries);
-      const brewData = breweries.map((brewery) => ({
-        brewId: brewery.id,
-        name: brewery.name,
-        location:
-          brewery.location.address1 +
-          " " +
-          brewery.location.city +
-          " " +
-          brewery.location.state,
-        rating: brewery.rating,
-        link: brewery.url,
-        photo: brewery.photos[0],
-      }));
+        console.log(breweries);
+        const brewData = breweries.map((brewery) => ({
+          brewId: brewery.id,
+          name: brewery.name,
+          location:
+            brewery.location.address1 +
+            " " +
+            brewery.location.city +
+            " " +
+            brewery.location.state,
+          rating: brewery.rating,
+          link: brewery.url,
+          photo: brewery.photos[0],
+        }));
 
-      setSearchedBreweries(brewData);
-      setSearchInput({
-        city: "",
-        state: "",
-      });
+        setSearchedBreweries(brewData);
+        setSearchInput({
+          city: "",
+          state: "",
+        });
+      } else if (loading) {
+        return null;
+      }
     } catch (err) {
       console.log(err);
     }
@@ -81,10 +84,12 @@ const Search = () => {
     });
   }
 
-   // create function to handle saving a breweries to our database
-   const handleSaveBrewery = async (brewId) => {
+  // create function to handle saving a breweries to our database
+  const handleSaveBrewery = async (brewId) => {
     // find the brewery in `searchedBreweries` state by the matching id
-    const brewToSave = searchedBreweries.find((brews) => brews.brewId === brewId);
+    const brewToSave = searchedBreweries.find(
+      (brews) => brews.brewId === brewId
+    );
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -222,21 +227,21 @@ const Search = () => {
                     </Card.Link>
                     <Card.Text>Location: {brews.location}</Card.Text>
                     {Auth.loggedIn() && (
-                    <Button
-                    variant="warning"
-                      disabled={savedBreweryIds?.some(
-                        (savedBreweryId) => savedBreweryId === brews.brewId
-                      )}
-                      className="btn-block btn-info"
-                      onClick={() => handleSaveBrewery(brews.brewId)}
-                    >
-                      {savedBreweryIds?.some(
-                        (savedBreweryId) => savedBreweryId === brews.brewId
-                      )
-                        ? "Saved!"
-                        : "Save"}
-                    </Button>
-                  )}
+                      <Button
+                        variant="warning"
+                        disabled={savedBreweryIds?.some(
+                          (savedBreweryId) => savedBreweryId === brews.brewId
+                        )}
+                        className="btn-block btn-info"
+                        onClick={() => handleSaveBrewery(brews.brewId)}
+                      >
+                        {savedBreweryIds?.some(
+                          (savedBreweryId) => savedBreweryId === brews.brewId
+                        )
+                          ? "Saved!"
+                          : "Save"}
+                      </Button>
+                    )}
                     <Button
                       variant="warning"
                       className="btn-block btn-info"
