@@ -42,7 +42,7 @@ const Dashboard = () => {
   return (
     <>
       <FadeIn>
-        <section id="hero" className="align-items-center">
+        <section className="align-items-center fixed-bg">
           <div
             className="container-fluid"
             data-aos="zoom-out"
