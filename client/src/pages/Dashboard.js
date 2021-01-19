@@ -10,7 +10,7 @@ import Map from "../components/Map";
 
 const Dashboard = () => {
   const { loading, data } = useQuery(GET_USER);
-  const userData = data?.me || {};
+  const userData = data?.me || [];
   console.log("test:" + userData.username);
   const [showModal, setShowModal] = useState(false);
   const [removeBrew, { error }] = useMutation(REMOVE_BREWERY);
@@ -113,25 +113,25 @@ const Dashboard = () => {
           </div>
         </section>
         <Modal
-        size="sm"
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby="login-signup-modal"
-      >
-        <Map
-          id="myMap"
-          options={{
-            center: { lat: 41.0082, lng: 28.9784 },
-            zoom: 20,
-          }}
-          onMapLoad={(map) => {
-            var marker = new window.google.maps.Marker({
-              position: { lat: 41.0082, lng: 28.9784 },
-              map: map,
-            });
-          }}
-        />
-      </Modal>
+          size="sm"
+          show={showModal}
+          onHide={() => setShowModal(false)}
+          aria-labelledby="login-signup-modal"
+        >
+          <Map
+            id="myMap"
+            options={{
+              center: { lat: 41.0082, lng: 28.9784 },
+              zoom: 20,
+            }}
+            onMapLoad={(map) => {
+              var marker = new window.google.maps.Marker({
+                position: { lat: 41.0082, lng: 28.9784 },
+                map: map,
+              });
+            }}
+          />
+        </Modal>
       </FadeIn>
     </>
   );
