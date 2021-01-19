@@ -15,10 +15,10 @@
     "express": "^4.17.1",
     "graphql-tools": "^7.0.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.10"
+    "mongoose": "^5.9.10",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3",
-    "dotenv": "^8.2.0"
+    "nodemon": "^2.0.3"
   }
 }
