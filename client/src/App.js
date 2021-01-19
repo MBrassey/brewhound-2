@@ -6,10 +6,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ApolloClient from "apollo-boost";
 import AboutUs from "./pages/About-us";
-import SignUp from "./pages/Signup";
+
 import Search from "./pages/Search";
 import NoBeer from "./pages/NoBeer";
-import Login from "./pages/Login";
+
 import Home from "./pages/Home";
 import React from "react";
 
@@ -37,8 +37,6 @@ function App() {
           
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={SignUp} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/saved" component={Dashboard} />
             <Route exact path="/about" component={AboutUs} />
