@@ -17,7 +17,7 @@ const typeDefs = gql`
     brewId: String
     name: String
     location: String
-    rating: Int
+    rating: Float
     link: String
     photo: String
   }
@@ -31,7 +31,7 @@ const typeDefs = gql`
     brewId: String
     name: String
     location: String
-    rating: Int
+    rating: Float
     link: String
     photo: String
   }
