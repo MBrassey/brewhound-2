@@ -1,4 +1,4 @@
-import { CardColumns, Card, Button } from "react-bootstrap";
+import { CardColumns, Card, Button, Modal } from "react-bootstrap";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { removeBreweryId } from "../utils/localStorage";
 import { REMOVE_BREWERY } from "../utils/mutations";
@@ -6,6 +6,7 @@ import { GET_USER } from "../utils/queries";
 import FadeIn from "react-fade-in";
 import Auth from "../utils/auth";
 import React, { useState } from "react";
+import Map from "../components/Map";
 
 const Dashboard = () => {
   const { loading, data } = useQuery(GET_USER);
@@ -111,6 +112,26 @@ const Dashboard = () => {
             </div>
           </div>
         </section>
+        <Modal
+        size="sm"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby="login-signup-modal"
+      >
+        <Map
+          id="myMap"
+          options={{
+            center: { lat: 41.0082, lng: 28.9784 },
+            zoom: 20,
+          }}
+          onMapLoad={(map) => {
+            var marker = new window.google.maps.Marker({
+              position: { lat: 41.0082, lng: 28.9784 },
+              map: map,
+            });
+          }}
+        />
+      </Modal>
       </FadeIn>
     </>
   );
