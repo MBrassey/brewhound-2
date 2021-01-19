@@ -44,8 +44,6 @@ const Search = () => {
     try {
       if (data) {
         const breweries = await data.search.business;
-
-        console.log(breweries);
         const brewData = breweries.map((brewery) => ({
           brewId: brewery.id,
           name: brewery.name,

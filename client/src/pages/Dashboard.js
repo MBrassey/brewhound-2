@@ -11,7 +11,6 @@ import Map from "../components/Map";
 const Dashboard = () => {
   const { loading, data } = useQuery(GET_USER);
   const userData = data?.me || [];
-  console.log("test:" + userData.username);
   const [showModal, setShowModal] = useState(false);
   const [removeBrew, { error }] = useMutation(REMOVE_BREWERY);
   const handleDeleteBrew = async (brewId) => {
