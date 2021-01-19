@@ -1,31 +1,138 @@
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import SearchResults from "../components/SearchResults";
-import React from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Card,
+  CardColumns,
+  Modal,
+} from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { saveBreweryIds, getSavedBreweryIds } from "../utils/localStorage";
+import { SAVE_BREWERY } from "../utils/mutations";
+import { useMutation } from "@apollo/react-hooks";
+import Auth from "../utils/auth";
+import { useQuery } from "@apollo/react-hooks";
+import { YELP_SEARCH } from "../utils/queries";
+import Map from "../components/Map";
 
 const Search = () => {
+  // modal
+  const [showModal, setShowModal] = useState(false);
+  // holds yelp GQL data
+  const [searchedBreweries, setSearchedBreweries] = useState([]);
+  // state for holding search input
+  const [searchInput, setSearchInput] = useState({
+    city: "",
+    state: "",
+  });
+  // GQL fetch for yelp data
+  const { data } = useQuery(YELP_SEARCH, {
+    variables: { location: searchInput.city + " " + searchInput.state },
+  });
+
+  // save breweries
+  const [saveBrewery, { error }] = useMutation(SAVE_BREWERY);
+  const [savedBreweryIds, setSavedBreweryIds] = useState(getSavedBreweryIds());
+  useEffect(() => {
+    return () => saveBreweryIds(savedBreweryIds);
+  });
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const breweries = await data.search.business;
+
+      console.log(breweries);
+      const brewData = breweries.map((brewery) => ({
+        brewId: brewery.id,
+        name: brewery.name,
+        location:
+          brewery.location.address1 +
+          " " +
+          brewery.location.city +
+          " " +
+          brewery.location.state,
+        rating: brewery.rating,
+        link: brewery.url,
+        photo: brewery.photos[0],
+      }));
+
+      setSearchedBreweries(brewData);
+      setSearchInput({
+        city: "",
+        state: "",
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  function handleChange(event) {
+    // form onChange handler since there are two form fields
+    // assigns value to form field value
+    // updates state with event.target.name (city or state) and maps to value
+    const value = event.target.value;
+    setSearchInput({
+      ...searchInput,
+      [event.target.name]: value,
+    });
+  }
+
+   // create function to handle saving a breweries to our database
+   const handleSaveBrewery = async (brewId) => {
+    // find the brewery in `searchedBreweries` state by the matching id
+    const brewToSave = searchedBreweries.find((brews) => brews.brewId === brewId);
+
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      await saveBrewery({
+        variables: { input: brewToSave },
+      });
+
+      if (error) {
+        throw new Error("Something went wrong!");
+      }
+
+      setSavedBreweryIds([...savedBreweryIds, brewToSave.brewId]);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <>
       <section className="fixed-bg">
         <Container>
-          <Form>
+          <Form onSubmit={handleFormSubmit}>
             <Row>
               <Col></Col>
               <Col>
                 <Form.Control
-                  type="city"
+                  name="city"
+                  type="text"
                   placeholder="City"
-                  className="form-control border-0 bg-light rounded rounded-pill"
+                  className="border-0 bg-light rounded rounded-pill"
+                  value={searchInput.city}
+                  onChange={handleChange}
                 />
               </Col>
               <Col>
                 <Form.Control
+                  name="state"
                   as="select"
-                  type="State"
-                  className="form-control border-0 bg-light rounded rounded-pill"
+                  type="text"
+                  className="border-0 bg-light rounded rounded-pill"
+                  value={searchInput.state}
+                  onChange={handleChange}
                 >
-                  <option value="" disabled selected>
-                    Select a State
-                  </option>
                   <option value="Alabama">Alabama</option>
                   <option value="Alaska">Alaska</option>
                   <option value="Arizona">Arizona</option>
@@ -95,9 +202,75 @@ const Search = () => {
             </Row>
           </Form>
 
-          <SearchResults></SearchResults>
+          <CardColumns className="mt-4">
+            {searchedBreweries.map((brews) => {
+              return (
+                <Card key={brews.brewId}>
+                  {brews.photo ? (
+                    <Card.Img
+                      src={brews.photo}
+                      alt={`${brews.name} Yelp cover`}
+                      variant="top"
+                    />
+                  ) : null}
+
+                  <Card.Body>
+                    <Card.Title className="BrewFont">{brews.name}</Card.Title>
+                    <Card.Text>Rating: {brews.rating}</Card.Text>
+                    <Card.Link href={brews.link} target="_blank">
+                      {brews.name}'s Website
+                    </Card.Link>
+                    <Card.Text>Location: {brews.location}</Card.Text>
+                    {Auth.loggedIn() && (
+                    <Button
+                    variant="warning"
+                      disabled={savedBreweryIds?.some(
+                        (savedBreweryId) => savedBreweryId === brews.brewId
+                      )}
+                      className="btn-block btn-info"
+                      onClick={() => handleSaveBrewery(brews.brewId)}
+                    >
+                      {savedBreweryIds?.some(
+                        (savedBreweryId) => savedBreweryId === brews.brewId
+                      )
+                        ? "Saved!"
+                        : "Save"}
+                    </Button>
+                  )}
+                    <Button
+                      variant="warning"
+                      className="btn-block btn-info"
+                      onClick={() => setShowModal(true)}
+                    >
+                      Map
+                    </Button>
+                  </Card.Body>
+                </Card>
+              );
+            })}
+          </CardColumns>
         </Container>
       </section>
+      <Modal
+        size="sm"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby="login-signup-modal"
+      >
+        <Map
+          id="myMap"
+          options={{
+            center: { lat: 41.0082, lng: 28.9784 },
+            zoom: 20,
+          }}
+          onMapLoad={(map) => {
+            var marker = new window.google.maps.Marker({
+              position: { lat: 41.0082, lng: 28.9784 },
+              map: map,
+            });
+          }}
+        />
+      </Modal>
     </>
   );
 };

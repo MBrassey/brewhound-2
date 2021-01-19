@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
-import brewLogo from "../img/brewLogo.svg"
+import brewLogo from "../img/brewLogo.svg";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginForm from "./LoginForm";
@@ -16,7 +16,7 @@ const AppNavbar = () => {
         <Navbar bg="light" variant="light" expand="lg" id="header">
           <Container fluid>
             <Navbar.Brand as={Link} to="/" className="logo">
-            <img className="brewLogo" src={brewLogo} ></img>
+              <img className="brewLogo" src={brewLogo} alt="pint of beer"></img>
               <span>B</span>rew<span>H</span>ound
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar" />
