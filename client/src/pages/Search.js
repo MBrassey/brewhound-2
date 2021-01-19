@@ -6,15 +6,19 @@ import {
   Button,
   Card,
   CardColumns,
-  Modal
+  Modal,
 } from "react-bootstrap";
-import React, { useState } from "react";
-// import { Auth } from "../utils/auth";
+import React, { useState, useEffect } from "react";
+import { saveBreweryIds, getSavedBreweryIds } from "../utils/localStorage";
+import { SAVE_BREWERY } from "../utils/mutations";
+import { useMutation } from "@apollo/react-hooks";
+import Auth from "../utils/auth";
 import { useQuery } from "@apollo/react-hooks";
 import { YELP_SEARCH } from "../utils/queries";
-import Map from '../components/Map';
+import Map from "../components/Map";
 
 const Search = () => {
+  // modal
   const [showModal, setShowModal] = useState(false);
   // holds yelp GQL data
   const [searchedBreweries, setSearchedBreweries] = useState([]);
@@ -28,9 +32,12 @@ const Search = () => {
     variables: { location: searchInput.city + " " + searchInput.state },
   });
 
-  // need to add logic to save brewery
-
-  // need to add logic to save to local storage
+  // save breweries
+  const [saveBrewery, { error }] = useMutation(SAVE_BREWERY);
+  const [savedBreweryIds, setSavedBreweryIds] = useState(getSavedBreweryIds());
+  useEffect(() => {
+    return () => saveBreweryIds(savedBreweryIds);
+  });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -73,6 +80,32 @@ const Search = () => {
       [event.target.name]: value,
     });
   }
+
+   // create function to handle saving a breweries to our database
+   const handleSaveBrewery = async (brewId) => {
+    // find the brewery in `searchedBreweries` state by the matching id
+    const brewToSave = searchedBreweries.find((brews) => brews.brewId === brewId);
+
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      await saveBrewery({
+        variables: { input: brewToSave },
+      });
+
+      if (error) {
+        throw new Error("Something went wrong!");
+      }
+
+      setSavedBreweryIds([...savedBreweryIds, brewToSave.brewId]);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <>
@@ -188,8 +221,29 @@ const Search = () => {
                       {brews.name}'s Website
                     </Card.Link>
                     <Card.Text>Location: {brews.location}</Card.Text>
-                    <Button variant="warning">Save</Button>
-                    <Button variant="warning" onClick={() => setShowModal(true)}>Map</Button>
+                    {Auth.loggedIn() && (
+                    <Button
+                    variant="warning"
+                      disabled={savedBreweryIds?.some(
+                        (savedBreweryId) => savedBreweryId === brews.brewId
+                      )}
+                      className="btn-block btn-info"
+                      onClick={() => handleSaveBrewery(brews.brewId)}
+                    >
+                      {savedBreweryIds?.some(
+                        (savedBreweryId) => savedBreweryId === brews.brewId
+                      )
+                        ? "Saved!"
+                        : "Save"}
+                    </Button>
+                  )}
+                    <Button
+                      variant="warning"
+                      className="btn-block btn-info"
+                      onClick={() => setShowModal(true)}
+                    >
+                      Map
+                    </Button>
                   </Card.Body>
                 </Card>
               );
@@ -198,26 +252,25 @@ const Search = () => {
         </Container>
       </section>
       <Modal
-          size="sm"
-          show={showModal}
-          onHide={() => setShowModal(false)}
-          aria-labelledby="login-signup-modal"
-        >
+        size="sm"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby="login-signup-modal"
+      >
         <Map
-        id="myMap"
-        options={{
-          center: { lat: 41.0082, lng: 28.9784 },
-          zoom: 20
-        }}
-        onMapLoad={map => {
-          var marker = new window.google.maps.Marker({
-            position: { lat: 41.0082, lng: 28.9784 },
-            map: map,
-          });
-        }}
-      />
-          
-        </Modal>
+          id="myMap"
+          options={{
+            center: { lat: 41.0082, lng: 28.9784 },
+            zoom: 20,
+          }}
+          onMapLoad={(map) => {
+            var marker = new window.google.maps.Marker({
+              position: { lat: 41.0082, lng: 28.9784 },
+              map: map,
+            });
+          }}
+        />
+      </Modal>
     </>
   );
 };

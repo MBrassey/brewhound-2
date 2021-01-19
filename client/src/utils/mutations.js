@@ -54,7 +54,7 @@ export const SAVE_BREWERY = gql`
 `;
 
 export const REMOVE_BREWERY = gql`
-  mutation removeBrew($brewId: String!) {
+  mutation removeBrewery($brewId: String!) {
     removeBrewery(brewId: $brewId) {
       _id
       username
