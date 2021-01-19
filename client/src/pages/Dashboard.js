@@ -91,7 +91,7 @@ const Dashboard = () => {
                                 className="btn-block btn-danger"
                                 onClick={() => handleDeleteBrew(brews.brewId)}
                               >
-                                Delete this Book!
+                                Delete this Brewery!
                               </Button>
                             )}
                             <Button
