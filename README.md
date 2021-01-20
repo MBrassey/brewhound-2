@@ -94,6 +94,8 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 
 > Pending.
 
+[<img src="https://wakatime.com/share/@532855a8-3081-4600-a53d-4262beb65d14/0454aac0-61bf-4f84-b455-cb6b9b7a7354.svg">](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/tplurruwdi?start=2021-01-10&end=2021-01-21)
+
 #### Questions
 
 Contact me at [matt@brassey.io](mailto:matt@brassey.io) with any questions or comments.
