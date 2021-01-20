@@ -1,4 +1,4 @@
-import { CardColumns, Card, Button} from "react-bootstrap";
+import { CardColumns, Card, Button } from "react-bootstrap";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { removeBreweryId } from "../utils/localStorage";
 import { REMOVE_BREWERY } from "../utils/mutations";
@@ -50,10 +50,10 @@ const Dashboard = () => {
               <div className="col-xl-10">
                 <div className="row">
                   <div className="col-xl-20">
-                    <h1 className="BrewFont">
+                    <h1 className="BrewFont text-sec">
                       <span>{userData.username}'s</span> Saved Breweries:
                     </h1>
-                    <h2>
+                    <h2 className="text-sec">
                       {userData.savedBreweries.length
                         ? `Viewing ${userData.savedBreweries.length} saved ${
                             userData.savedBreweries.length === 1

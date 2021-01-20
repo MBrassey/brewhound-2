@@ -21,7 +21,7 @@ export const GET_USER = gql`
 
 export const YELP_SEARCH = gql`
   query SearchForBreweries($location: String) {
-    search(term: "brewery", location: $location, limit: 2) {
+    search(term: "brewery", location: $location, limit: 10) {
       total
       business {
         id

@@ -1,13 +1,13 @@
 :root {
   --primary-color: #999273;
   --secondary-color: #ffc30f;
-  --tertiary-color: #E0A800;
+  --tertiary-color: #e0a800;
   --white: #ffffff;
 }
 
 @font-face {
-  font-family: 'BrewFont';
-  src: local('BrewFont'), url(./fonts/Brew.woff) format('woff');
+  font-family: "BrewFont";
+  src: local("BrewFont"), url(./fonts/Brew.woff) format("woff");
 }
 
 body {
@@ -112,7 +112,8 @@ h4 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(./img/pexels-pixabay-159291.jpg) top center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./img/pexels-pixabay-159291.jpg) top center no-repeat;
   background-size: cover;
   position: relative;
   padding-top: 82px;
@@ -171,8 +172,8 @@ h4 {
   width: 48px;
   padding-bottom: 13px;
   margin-right: 6px;
-  -webkit-filter: drop-shadow( 5px 5px 10px rgba(0, 0, 0, 0.5));
-  filter: drop-shadow( 5px 5px 10px rgba(0, 0, 0, .5));
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 .BrewFont {
   font-family: "BrewFont";
@@ -226,18 +227,11 @@ section {
   color: var(--primary-color);
 }
 
-.text-pri :hover {
-  color: rgba(0, 0, 0, 0.6);
-}
-
 .text-sec {
   font-size: 22px;
   color: var(--secondary-color);
 }
 
-.text-sec :hover {
-  color: rgba(0, 0, 0, 0.6);
-}
 .scrollTop {
   position: fixed;
   width: 100%;
@@ -259,10 +253,9 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image: url(./img/pexels-pixabay-159291.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./img/pexels-pixabay-159291.jpg);
   min-height: 700px;
-
-  
 }
 footer {
   position: fixed;
@@ -271,7 +264,6 @@ footer {
   width: 100%;
   text-align: center;
 }
-
 
 @media (max-width: 768px) {
   #hero {
