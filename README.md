@@ -97,10 +97,10 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 > GraphQL Mutations & Queries, Save Breweries, User Dashboard Component, React Effects & Readme.
 ### Ryan Brown [![GitHub](./img/github.png)](https://github.com/ryanabrown14)
 
-> React layout, Google map API, Scroll to Top, Debugging.
+> React Layout, Google Map API, Scroll to Top, Debugging.
 ### Abel Estrada [![GitHub](./img/github.png)](https://github.com/Astra97)
 
-> About us Component, Project Presentation.
+> About Us Component, Project Presentation.
 
 <h3><p align="center" id="Workload">7 Day Workload Average</p></h3>
 
