@@ -61,7 +61,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
     browse to http://localhost:3000/
     browse to http://localhost:3001/graphql/
 
-<h3><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://brewhound-2.herokuapp.com/">webapplication</a></p></h3>
+<h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://brewhound-2.herokuapp.com/">webapplication</a></p></h6>
 
 > Search Breweries
 > [<img src="./img/Preview.jpg">](https://brewhound-2.herokuapp.com/)
@@ -78,7 +78,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 > GraphQL Queries
 > [<img src="./img/GraphQL.gif">](https://brewhound-2.herokuapp.com/)
 
-<h5><p align="center">Contributors</p></h5>
+<h4><p align="center">Contributors</p></h4>
 
 ### Matthew Ondrovic [![GitHub](./img/github.png)](https://github.com/mondrovic)
 
