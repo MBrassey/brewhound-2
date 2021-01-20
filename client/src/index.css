@@ -108,6 +108,10 @@ h4 {
   background: #111;
   color: var(--white);
 }
+.color {
+  color: #ffffff;
+}
+
 
 #hero {
   width: 100%;
