@@ -25,6 +25,12 @@ const brewSchema = new Schema({
   photo: {
     type: String,
   },
+  lat: {
+    type: Number,
+  },
+  lng: {
+    type: Number,
+  },
 });
 
 module.exports = brewSchema;

@@ -20,6 +20,8 @@ const typeDefs = gql`
     rating: Float
     link: String
     photo: String
+    lat: Float
+    lng: Float
   }
 
   type Auth {
@@ -34,6 +36,8 @@ const typeDefs = gql`
     rating: Float
     link: String
     photo: String
+    lat:  Float
+    lng: Float
   }
 
   type Query {

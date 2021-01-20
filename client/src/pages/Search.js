@@ -98,23 +98,28 @@ const Search = () => {
     const brewToSave = searchedBreweries.find(
       (brews) => brews.brewId === brewId
     );
+    console.log("Block 1")
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
+    console.log("Block 2")
 
     if (!token) {
       return false;
     }
+    console.log("Block 3")
 
     try {
       await saveBrewery({
         variables: { input: brewToSave },
       });
+      console.log("Block 4")
 
       if (error) {
         throw new Error("Something went wrong!");
       }
 
       setSavedBreweryIds([...savedBreweryIds, brewToSave.brewId]);
+      console.log("Block 5")
     } catch (err) {
       console.error(err);
     }
