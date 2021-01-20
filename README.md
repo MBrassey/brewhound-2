@@ -100,7 +100,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 > React Layout, Google Map API, Scroll to Top, Debugging.
 ### Abel Estrada [![GitHub](./img/github.png)](https://github.com/Astra97)
 
-> About Us Component, Project Presentation.
+> About Us Component, Contact Us Form, Project Presentation.
 
 <h3><p align="center" id="Workload">7 Day Workload Average</p></h3>
 
