@@ -80,16 +80,16 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 
 <h5><p align="center">Contributors</p></h5>
 
-#### Matthew Ondrovic [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
+#### Matthew Ondrovic [![GitHub](./img/github.png)](https://github.com/mondrovic)
 
 > Pending.
-#### Matthew Brassey [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
+#### Matthew Brassey [![GitHub](./img/github.png)](https://github.com/MBrassey)
 
 > GraphQL Mutations & Queries, Save Breweries Functionality, User Dashboard Component, React Effects & Readme.
-#### Ryan Brown [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
+#### Ryan Brown [![GitHub](./img/github.png)](https://github.com/ryanabrown14)
 
 > React layout, Google map API, scroll to top, bug-fixes.
-#### SupremeA [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
+#### SupremeA [![GitHub](./img/github.png)](https://github.com/Astra97)
 
 > Pending.
 
