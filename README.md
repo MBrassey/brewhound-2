@@ -64,22 +64,22 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
     browse to http://localhost:3000/
     browse to http://localhost:3001/graphql/
 
-<h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://powerful-woodland-87834.herokuapp.com/">webapplication</a></p></h6>
+<h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://brewhound-2.herokuapp.com/">webapplication</a></p></h6>
 
 > Search Breweries
-> [<img src="./img/Preview.jpg">](https://powerful-woodland-87834.herokuapp.com/)
+> [<img src="./img/Preview.jpg">](https://brewhound-2.herokuapp.com/)
 
 > Login / SignUp
-> [<img src="./img/Preview2.jpg">](https://powerful-woodland-87834.herokuapp.com/)
+> [<img src="./img/Preview2.jpg">](https://brewhound-2.herokuapp.com/)
 
 > Saved Breweries (LoggedIn)
-> [<img src="./img/Preview3.jpg">](https://powerful-woodland-87834.herokuapp.com/)
+> [<img src="./img/Preview3.jpg">](https://brewhound-2.herokuapp.com/)
 
 > Setup
-> [<img src="./img/Setup.gif">](https://powerful-woodland-87834.herokuapp.com/)
+> [<img src="./img/Setup.gif">](https://brewhound-2.herokuapp.com/)
 
 > GraphQL Queries
-> [<img src="./img/GraphQL.gif">](https://powerful-woodland-87834.herokuapp.com/)
+> [<img src="./img/GraphQL.gif">](https://brewhound-2.herokuapp.com/)
 
 <h3><p align="center">Contributors</p></h3>
 
