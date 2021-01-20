@@ -79,7 +79,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 > [<img src="./img/Preview3.jpg">](https://brewhound-2.herokuapp.com/)
 
 > About Us
-> [<img src="./img/Preview4.jpg">](https://brewhound-2.herokuapp.com/)
+> [<img src="./img/Preview5.jpg">](https://brewhound-2.herokuapp.com/)
 
 > Setup
 > [<img src="./img/Setup.gif">](https://brewhound-2.herokuapp.com/)
