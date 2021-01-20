@@ -85,16 +85,16 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 
 ### Matthew Ondrovic [![GitHub](./img/github.png)](https://github.com/mondrovic)
 
-> Pending.
+> Server Setup, 3rd party API Implementation, Search Results, Search Page State Management & Debugging.
 ### Matthew Brassey [![GitHub](./img/github.png)](https://github.com/MBrassey)
 
 > GraphQL Mutations & Queries, Save Breweries, User Dashboard Component, React Effects & Readme.
 ### Ryan Brown [![GitHub](./img/github.png)](https://github.com/ryanabrown14)
 
-> React layout, Google map API, Scroll to Top, Bug-fixes.
-### SupremeA [![GitHub](./img/github.png)](https://github.com/Astra97)
+> React layout, Google map API, Scroll to Top, Debugging.
+### Abel Estrada [![GitHub](./img/github.png)](https://github.com/Astra97)
 
-> Pending.
+> About us Component, Project Presentation.
 
 <h3><p align="center" id="Workload">7 Day Workload Average</p></h3>
 
