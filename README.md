@@ -83,13 +83,13 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 #### Matthew Ondrovic [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
 > Pending.
-#### Matthew Brassey
+#### Matthew Brassey [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
 > GraphQL Mutations & Queries, Save Breweries Functionality, User Dashboard Component, React Effects & Readme.
-#### Ryan Brown
+#### Ryan Brown [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
 > Pending.
-#### SupremeA
+#### SupremeA [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
 > Pending.
 
