@@ -1,11 +1,11 @@
 <p align="right">
-    <img src="https://img.shields.io/badge/javascript-9cf" />
-    <img src="https://img.shields.io/badge/mongoDB-9cf" />
-    <img src="https://img.shields.io/badge/express-9cf" />
-    <img src="https://img.shields.io/badge/react-9cf" />
-    <img src="https://img.shields.io/badge/node-9cf" />
-    <img src="https://img.shields.io/badge/graphQL-9cf" />
-    <img src="https://img.shields.io/badge/apollo-9cf" />
+    <img src="https://img.shields.io/badge/javascript-E0A800" />
+    <img src="https://img.shields.io/badge/mongoDB-E0A800" />
+    <img src="https://img.shields.io/badge/express-E0A800" />
+    <img src="https://img.shields.io/badge/react-E0A800" />
+    <img src="https://img.shields.io/badge/node-E0A800" />
+    <img src="https://img.shields.io/badge/graphQL-E0A800" />
+    <img src="https://img.shields.io/badge/apollo-E0A800" />
 </p>
 
 ## brewhound-2
@@ -61,22 +61,22 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
     browse to http://localhost:3000/
     browse to http://localhost:3001/graphql/
 
-<h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://mbrassey-brewhound-2.herokuapp.com/">webapplication</a></p></h6>
+<h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://brewhound-2.herokuapp.com/">webapplication</a></p></h6>
 
 > Search Breweries
-> [<img src="./img/Preview.jpg">](https://mbrassey-brewhound-2.herokuapp.com/)
+> [<img src="./img/Preview.jpg">](https://brewhound-2.herokuapp.com/)
 
 > Login / SignUp
-> [<img src="./img/Preview2.jpg">](https://mbrassey-brewhound-2.herokuapp.com/)
+> [<img src="./img/Preview2.jpg">](https://brewhound-2.herokuapp.com/)
 
 > Saved Breweries (LoggedIn)
-> [<img src="./img/Preview3.jpg">](https://mbrassey-brewhound-2.herokuapp.com/)
+> [<img src="./img/Preview3.jpg">](https://brewhound-2.herokuapp.com/)
 
 > Setup
-> [<img src="./img/Setup.gif">](https://mbrassey-brewhound-2.herokuapp.com/)
+> [<img src="./img/Setup.gif">](https://brewhound-2.herokuapp.com/)
 
 > GraphQL Queries
-> [<img src="./img/GraphQL.gif">](https://mbrassey-brewhound-2.herokuapp.com/)
+> [<img src="./img/GraphQL.gif">](https://brewhound-2.herokuapp.com/)
 
 ### Contributors
 
@@ -85,7 +85,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 > Pending.
 #### Matthew Brassey
 
-> GraphQL Mutations & Queries, Save Breweries Functionality, User Dashboard, Linting & Readme.
+> GraphQL Mutations & Queries, Save Breweries Functionality, User Dashboard Component, React Effects & Readme.
 #### Ryan Brown
 
 > Pending.
