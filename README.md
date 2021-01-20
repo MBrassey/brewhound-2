@@ -98,11 +98,11 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 
 <h3><p align="center" id="Workload">7 Day Combined Workload Average</p></h3>
 
-[<img src="https://wakatime.com/share/@532855a8-3081-4600-a53d-4262beb65d14/0454aac0-61bf-4f84-b455-cb6b9b7a7354.svg">](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/tplurruwdi?start=2021-01-10&end=2021-01-21)
+[<img src="./img/Workload.svg">](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/tplurruwdi?start=2021-01-10&end=2021-01-21)
 
 <h3><p align="center" id="Languages">Language Breakdown</p></h3>
 
-[<img src="https://wakatime.com/share/@532855a8-3081-4600-a53d-4262beb65d14/8842942c-2e47-4d49-93e9-0242f627f7f5.svg">](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/tplurruwdi?start=2021-01-10&end=2021-01-21)
+[<img src="./img/Languages.svg">](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/tplurruwdi?start=2021-01-10&end=2021-01-21)
 
 #### Questions
 
