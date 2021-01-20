@@ -92,7 +92,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 ### Ryan Brown [![GitHub](./img/github.png)](https://github.com/ryanabrown14)
 
 > React layout, Google map API, Scroll to Top, Bug-fixes.
-### SupremeA [![GitHub](./img/github.png)](https://github.com/Astra97)
+### Abel Estrada [![GitHub](./img/github.png)](https://github.com/Astra97)
 
 > Pending.
 
