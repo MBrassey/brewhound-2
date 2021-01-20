@@ -50,10 +50,10 @@ const Dashboard = () => {
               <div className="col-xl-10">
                 <div className="row">
                   <div className="col-xl-20">
-                    <h1 className="BrewFont">
+                    <h1 className="BrewFont color">
                       <span>{userData.username}'s</span> Saved Breweries:
                     </h1>
-                    <h2>
+                    <h2 className="color2">
                       {userData.savedBreweries.length
                         ? `Viewing ${userData.savedBreweries.length} saved ${
                             userData.savedBreweries.length === 1
