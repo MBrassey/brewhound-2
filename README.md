@@ -13,7 +13,7 @@
 MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</strong> with GraphQL integration using multiple external API's. SPA (Single Page Application) utilizing react router, GraphQL and JWT (JSON Web Token) authentication. The backend application is deployed live @Heroku utilizing MongoDB Atlas.
 
 [![licensebadge](https://img.shields.io/badge/license-CC0_1.0_Universal-blue)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
-[![WakaTime](https://wakatime.com/badge/github/MBrassey/brewhound-2.svg)](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/tplurruwdi?start=2021-01-12&end=2021-01-21)
+[![WakaTime](https://wakatime.com/badge/github/MBrassey/brewhound-2.svg)](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/tplurruwdi?start=2021-01-10&end=2021-01-21)
 
 #### Branches
 
