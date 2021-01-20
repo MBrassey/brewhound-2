@@ -6,7 +6,7 @@ const brewSchema = new Schema({
   brewId: {
     type: String,
     required: true,
-    unique: true,
+    
   },
   name: {
     type: String,
