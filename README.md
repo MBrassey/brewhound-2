@@ -61,7 +61,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
     browse to http://localhost:3000/
     browse to http://localhost:3001/graphql/
 
-<h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://brewhound-2.herokuapp.com/">webapplication</a></p></h6>
+<h4><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://brewhound-2.herokuapp.com/">webapplication</a></p></h4>
 
 > Search Breweries
 > [<img src="./img/Preview.jpg">](https://brewhound-2.herokuapp.com/)
@@ -85,10 +85,10 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 > Pending.
 #### Matthew Brassey [![GitHub](./img/github.png)](https://github.com/MBrassey)
 
-> GraphQL Mutations & Queries, Save Breweries Function, User Dashboard Component, React Effects & Readme.
+> GraphQL Mutations & Queries, Save Breweries, User Dashboard Component, React Effects & Readme.
 #### Ryan Brown [![GitHub](./img/github.png)](https://github.com/ryanabrown14)
 
-> React layout, Google map API, scroll to top, bug-fixes.
+> React layout, Google map API, Scroll to Top, Bug-fixes.
 #### SupremeA [![GitHub](./img/github.png)](https://github.com/Astra97)
 
 > Pending.
