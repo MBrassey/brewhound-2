@@ -96,7 +96,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 
 > Pending.
 
-<h3><p align="center" id="Workload">7 Day Combined Workload</p></h3>
+<h3><p align="center" id="Workload">7 Day Workload Average</p></h3>
 
 [<img src="./img/Workload.svg">](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/tplurruwdi?start=2021-01-10&end=2021-01-21)
 
