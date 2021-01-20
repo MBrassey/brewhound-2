@@ -78,18 +78,18 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 > GraphQL Queries
 > [<img src="./img/GraphQL.gif">](https://brewhound-2.herokuapp.com/)
 
-### Contributors
+<h5><p align="center">Contributors</p></h5>
 
-#### Matthew Ondrovic [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
+### Matthew Ondrovic [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
 > Pending.
-#### Matthew Brassey [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
+### Matthew Brassey [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
 > GraphQL Mutations & Queries, Save Breweries Functionality, User Dashboard Component, React Effects & Readme.
-#### Ryan Brown [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
+### Ryan Brown [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
 > Pending.
-#### SupremeA [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
+### SupremeA [![GitHub](./img/github.png)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
 > Pending.
 
