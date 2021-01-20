@@ -27,6 +27,10 @@ export const YELP_SEARCH = gql`
         id
         name
         url
+        coordinates {
+          latitude
+          longitude
+        }
         location {
           address1
           city

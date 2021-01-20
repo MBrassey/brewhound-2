@@ -44,6 +44,8 @@ const Search = () => {
     try {
       if (data) {
         const breweries = await data.search.business;
+
+        console.log(breweries);
         const brewData = breweries.map((brewery) => ({
           brewId: brewery.id,
           name: brewery.name,
@@ -53,6 +55,8 @@ const Search = () => {
             brewery.location.city +
             " " +
             brewery.location.state,
+          lat: brewery.coordinates.latitude,
+          lng: brewery.coordinates.longitude,
           rating: brewery.rating,
           link: brewery.url,
           photo: brewery.photos[0],
@@ -244,32 +248,35 @@ const Search = () => {
                       variant="warning"
                       className="btn-block btn-info"
                       onClick={() => setShowModal(true)}
+                      
                     >
                       Map
                     </Button>
+                    <Modal
+                  show={showModal}
+                  onHide={() => setShowModal(false)}
+                  
+                >
+                  <Map
+                    id="myMap"
+                    options={{
+                    Center: { lat: brews.lat, lng: brews.lng },
+                      zoom: 20,
+                    }}
+                    
+
+                  />
+                  {console.log(brews.lat)}
+              
+                </Modal>
                   </Card.Body>
                 </Card>
               );
             })}
           </CardColumns>
         </Container>
-      </section>
-      <Modal
-        size="sm"
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby="login-signup-modal"
-      >
-        <Map
-          id="myMap"
-          options={{
-            center: { lat: 41.0082, lng: 28.9784 },
-            zoom: 20,
-          }}
+      </section> 
 
-
-        />
-      </Modal>
     </>
   );
 };
