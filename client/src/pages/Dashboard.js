@@ -1,17 +1,15 @@
-import { CardColumns, Card, Button, Modal } from "react-bootstrap";
+import { CardColumns, Card, Button} from "react-bootstrap";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { removeBreweryId } from "../utils/localStorage";
 import { REMOVE_BREWERY } from "../utils/mutations";
 import { GET_USER } from "../utils/queries";
 import FadeIn from "react-fade-in";
 import Auth from "../utils/auth";
-import React, { useState } from "react";
-import Map from "../components/Map";
+import React from "react";
 
 const Dashboard = () => {
   const { loading, data } = useQuery(GET_USER);
   const userData = data?.me || [];
-  const [showModal, setShowModal] = useState(false);
   const [removeBrew, { error }] = useMutation(REMOVE_BREWERY);
   const handleDeleteBrew = async (brewId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -94,13 +92,6 @@ const Dashboard = () => {
                                 Delete this Brewery!
                               </Button>
                             )}
-                            <Button
-                              variant="warning"
-                              className="btn-block btn-info"
-                              onClick={() => setShowModal(true)}
-                            >
-                              Map
-                            </Button>
                           </Card.Body>
                         </Card>
                       );
@@ -111,20 +102,6 @@ const Dashboard = () => {
             </div>
           </div>
         </section>
-        <Modal
-          size="sm"
-          show={showModal}
-          onHide={() => setShowModal(false)}
-          aria-labelledby="login-signup-modal"
-        >
-          <Map
-            id="myMap"
-            options={{
-              center: { lat: 41.0082, lng: 28.9784 },
-              zoom: 20,
-            }}
-          />
-        </Modal>
       </FadeIn>
     </>
   );

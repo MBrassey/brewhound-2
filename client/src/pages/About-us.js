@@ -19,7 +19,7 @@ const AboutUs = () => {
                       <h1 className="bg-dark text-warning">About Us!</h1>
                     </div>
                     <h2 className="bg-dark text-warning mt-0">
-                      Here at Homebrew, you can look up bars near you or if you
+                      Here at Brew hound, you can look up bars near you or if you
                       are planning a trip to another city, you can find bars
                       close by too. With the use of yelp you can figure out bars
                       with the good rating to ensure a good time out.
