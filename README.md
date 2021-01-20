@@ -10,7 +10,7 @@
 
 ## brewhound-2
 
-MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</strong> with GraphQL integration and multiple external API's. SPA (Single Page Application) utilizing react router, GraphQL and JWT (JSON Web Token) authentication. The backend application is deployed live @Heroku utilizing MongoDB Atlas.
+MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</strong> with GraphQL integration using multiple external API's. SPA (Single Page Application) utilizing react router, GraphQL and JWT (JSON Web Token) authentication. The backend application is deployed live @Heroku utilizing MongoDB Atlas.
 
 [![licensebadge](https://img.shields.io/badge/license-CC0_1.0_Universal-blue)](https://github.com/MBrassey/brewhound-2/blob/main/LICENSE)
 
