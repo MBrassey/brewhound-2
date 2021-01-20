@@ -20,6 +20,11 @@ import Map from "../components/Map";
 const Search = () => {
   // modal
   const [showModal, setShowModal] = useState(false);
+  // holds coordinates for map rendering
+  const [coords, setCoords] = useState({
+    lat: "",
+    lng: "",
+  });
   // holds yelp GQL data
   const [searchedBreweries, setSearchedBreweries] = useState([]);
   // state for holding search input
@@ -39,13 +44,14 @@ const Search = () => {
     return () => saveBreweryIds(savedBreweryIds);
   });
 
+  console.log(coords);
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
       if (data) {
         const breweries = await data.search.business;
 
-        console.log(breweries);
         const brewData = breweries.map((brewery) => ({
           brewId: brewery.id,
           name: brewery.name,
@@ -247,36 +253,32 @@ const Search = () => {
                     <Button
                       variant="warning"
                       className="btn-block btn-info"
-                      onClick={() => setShowModal(true)}
-                      
+                      onClick={() => {
+                        setShowModal(true);
+                        setCoords({
+                          lat: brews.lat,
+                          lng: brews.lng,
+                        });
+                      }}
                     >
                       Map
                     </Button>
-                    <Modal
-                  show={showModal}
-                  onHide={() => setShowModal(false)}
-                  
-                >
-                  <Map
-                    id="myMap"
-                    options={{
-                    Center: { lat: brews.lat, lng: brews.lng },
-                      zoom: 20,
-                    }}
-                    
-
-                  />
-                  {console.log(brews.lat)}
-              
-                </Modal>
                   </Card.Body>
                 </Card>
               );
             })}
           </CardColumns>
         </Container>
-      </section> 
-
+      </section>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Map
+          id="myMap"
+          options={{
+            Center: { lat: coords.lat, lng: coords.lng },
+            zoom: 20,
+          }}
+        />
+      </Modal>
     </>
   );
 };
