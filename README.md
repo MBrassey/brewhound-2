@@ -85,7 +85,7 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 > Pending.
 #### Matthew Brassey [![GitHub](./img/github.png)](https://github.com/MBrassey)
 
-> GraphQL Mutations & Queries, Save Breweries Functionality, User Dashboard Component, React Effects & Readme.
+> GraphQL Mutations & Queries, Save Breweries Function, User Dashboard Component, React Effects & Readme.
 #### Ryan Brown [![GitHub](./img/github.png)](https://github.com/ryanabrown14)
 
 > React layout, Google map API, scroll to top, bug-fixes.
