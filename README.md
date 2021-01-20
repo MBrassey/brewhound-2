@@ -53,13 +53,13 @@ MERN (MongoDB, Express.js, React, and Node.js) stack <strong>_Brewery Finder_</s
 <h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Screenshots" href="https://mbrassey-brewhound-2.herokuapp.com/">webapplication</a></p></h6>
 
 > brewhound-2 Search
-> [<img src="./img/Preview2.png">](https://mbrassey-brewhound-2.herokuapp.com/)
+> [<img src="./img/Preview.jpg">](https://mbrassey-brewhound-2.herokuapp.com/)
 
 > Login / SignUp
-> [<img src="./img/Preview3.png">](https://mbrassey-brewhound-2.herokuapp.com/)
+> [<img src="./img/Preview2.jpg">](https://mbrassey-brewhound-2.herokuapp.com/)
 
 > Saved Breweries (LoggedIn)
-> [<img src="./img/Preview.png">](https://mbrassey-brewhound-2.herokuapp.com/)
+> [<img src="./img/Preview3.jpg">](https://mbrassey-brewhound-2.herokuapp.com/)
 
 > Setup
 > [<img src="./img/Setup.gif">](https://mbrassey-brewhound-2.herokuapp.com/)
