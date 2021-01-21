@@ -122,7 +122,7 @@ Contact me at [matt@brassey.io](mailto:matt@brassey.io) with any questions or co
 
 
 
-| Group Letter  | Group Member |
+| Member Letter  | Group Member |
 | ------------- | ------------- |
 | A  | Matthew Brassey  |
 | B  | Matthew Ondrovic  |
